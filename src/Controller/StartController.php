@@ -56,7 +56,7 @@ class StartController extends Controller
                     $addFile->setFile($fileName);
                     $addFile->setVisibility(false); //set visibility file's to false
                 }
-
+ 
                 $entityManager->persist($addFile);
                 $entityManager->flush();
 

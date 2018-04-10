@@ -87,7 +87,6 @@ class UserController extends Controller
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
 
         $user->setEnabled(true);
-
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();

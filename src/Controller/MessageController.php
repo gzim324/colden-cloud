@@ -25,7 +25,7 @@ class MessageController extends Controller
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($message);
-        $entityManager->flush();
+        $entityManager->flush(); 
 
         return $this->redirect($this->generateUrl('home'));
     }
