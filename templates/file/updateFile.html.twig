@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block file %}
+
+    <div class="row">
+        <div class="well">
+            <center><h2>FILE</h2></center>
+            {{ form_start(updateFileForm, {"attr": {"novalidate": "novalidate"}}) }}
+            <div class="form-group">
+                <label>Name</label> {{ form_widget(updateFileForm.name) }}
+            </div>
+            <div class="form-group">
+                {{ form_widget(updateFileForm.visibility) }}
+            </div>
+            {{ form_end(updateFileForm) }}
+
+            <a class="btn btn-default" href="{{ path("home") }}">CANCEL</a>
+
+        </div>
+    </div>
+
+{% endblock %}

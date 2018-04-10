@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation" class="active"><a href="{{ path('home') }}">Home</a></li>
+            <li role="presentation"><a href="{{ path('user_index') }}">Users</a></li>
+        </ul>
+    {% endif %} <br>
+{% endblock %}
+
+{% block file %}
+
+    <div class="row">
+        <div class="well">
+            <center><h2>FILE</h2></center>
+            {{ form(formFile, {'attr': {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
+    <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>img</th>
+                    <th>NAME</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for entry in resultFormFile %}
+                    <tr>
+                        <td> <a href="{{ asset('uploads/'~entry.path) }}" target="_blank"><img src="{{ asset('uploads/'~entry.path) }}" class="img-responsive" width="20"></a> </td>
+                        <td> <a href="{{ asset('uploads/'~entry.path) }}" target="_blank">{{ entry.name }}</a></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No data in database</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+
+{% endblock %}
+
+{% block message %}
+    <div class="row">
+        <div class="well">
+            <center><h2>NOTE</h2></center>
+            {{ form(formMessage, {'attr': {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
+    <div class="row">
+        {% for entry in resultFormMessage %}
+            <div class="well">
+                <pre><font face="veranda"><p>{{ entry.message }}</p></font></pre>
+            </div>
+        {% else %}
+            <p>No data in database</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

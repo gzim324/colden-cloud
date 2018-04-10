@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation" class="active"><a href="{{ path('home') }}">Home</a></li>
+            <li role="presentation"><a href="{{ path('user_index') }}">Users</a></li>
+        </ul>
+    {% endif %} <br>
+{% endblock %}
+
+{% block file %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <div class="row">
+        <div class="well">
+            <center><h2>FILE</h2></center>
+            {{ form(formFile, {'attr': {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
+    <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>img</th>
+                    <th>NAME</th>
+                    <th>X</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for entry in resultFormFile %}
+                    <tr>
+                        <td> <a href="{{ asset('uploads/'~entry.path) }}" target="_blank"><img src="{{ asset('uploads/'~entry.path) }}" class="img-responsive" width="20"></a> </td>
+                        <td> <a href="{{ asset('uploads/'~entry.path) }}" target="_blank">{{ entry.name }}</a></td>
+
+                        <td>
+                            <div class="dropdown pull-right">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    …
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="options">
+                                    <li><a href="{{ asset('uploads/'~entry.path) }}" target="_blank" download>Download</a></li>
+                                    <li><a href="{{ path("update_file", {'id': entry.id}) }}">Update</a></li>
+                                    <li><a href="{{ path("delete_file", {'id': entry.id}) }}">Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No data in database</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block message %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <div class="row">
+        <div class="well">
+            <center><h2>NOTE</h2></center>
+            {{ form(formMessage, {'attr': {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
+    <div class="row">
+        {% for entry in resultFormMessage %}
+            <div class="well">
+                <pre><font face="veranda"><p>{{ entry.message }}</p></font></pre>
+                <a class="btn btn-danger btn-sm" href="{{ path("delete_message", {'id': entry.id}) }}">DELETE</a>
+                <a class="btn btn-warning btn-sm" href="{{ path('update_message', {'id': entry.id}) }}">UPDATE</a>
+            </div>
+        {% else %}
+            <p>No data in database</p>
+        {% endfor %}
+    </div>
+        {% endif %}
+
+{% endblock %}
