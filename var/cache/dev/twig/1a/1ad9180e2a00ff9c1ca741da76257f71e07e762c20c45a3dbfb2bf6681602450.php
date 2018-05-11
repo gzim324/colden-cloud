@@ -272,7 +272,7 @@ class __TwigTemplate_3adcd82ca57a1e1cfea53bb5974a3d5d1bdb893c2b602fc5e55aa8db13d
     public function getSourceContext()
     {
         return new Twig_Source("{% extends \"base.html.twig\" %}
-
+ 
 {% block body %}
     {% if is_granted('ROLE_ADMIN') %}
         <ul class=\"nav nav-pills nav-justified\">

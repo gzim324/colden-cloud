@@ -43,21 +43,22 @@ class UserController extends Controller
         $formUser = $this->createForm(UserType::class, $user);
 
         $formUser->handleRequest($request);
+
         if($request->isMethod('POST')) {
             if($formUser->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $user->setEnabled(1);
-                $user->setEmail("user@user.user");
                 $entityManager->persist($user);
                 $entityManager->flush();
 
                 $formUser->getData();
+
                 return $this->redirectToRoute("user_index");
             }
         }
 
         return array(
-            'formUser' => isset($formUser) ? $formUser->createView() : NULL
+            'formUser' => isset($formUser) ? $formUser->createView() : null
         );
     }
 
@@ -107,6 +108,7 @@ class UserController extends Controller
         $formUser = $this->createForm(UserType::class, $user);
 
         $formUser->handleRequest($request);
+
         if($request->isMethod('POST')) {
             if($formUser->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
@@ -115,12 +117,13 @@ class UserController extends Controller
                 $entityManager->flush();
 
                 $formUser->getData();
+
                 return $this->redirectToRoute("user_index");
             }
         }
 
         return array(
-            'formUser' => isset($formUser) ? $formUser->createView() : NULL
+            'formUser' => isset($formUser) ? $formUser->createView() : null
         );
     }
 
@@ -139,6 +142,7 @@ class UserController extends Controller
         }
 
         $formSettings = $this->createForm(SettingsType::class, $user);
+
         if($request->isMethod('POST')) {
             $formSettings->handleRequest($request);
             $entityManager = $this->getDoctrine()->getManager();

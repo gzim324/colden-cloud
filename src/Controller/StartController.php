@@ -36,11 +36,12 @@ class StartController extends Controller
         $formFile = $this->createForm(DocType::class, $addFile); //form adding file
 
         $formFile->handleRequest($request); //I'm getting what's data was in the form
+
         if($request->isMethod('POST')){ //I'm checking if this is method post
             if($formFile->isSubmitted() && $formFile->isValid()) { //checking if data is valid and submitted
                 $entityManager = $this->getDoctrine()->getManager(); //
 
-                if($addFile->getName() == NULL){ //if there is no name, it'll be get
+                if($addFile->getName() === null) { //if there is no name, it'll be get
                     $addFile->upload();
                 }else {
                     $addFile->setName($addFile->getPath());
@@ -61,6 +62,7 @@ class StartController extends Controller
                 $entityManager->flush();
 
                 $formFile->getData();
+
                 return $this->redirect($this->generateUrl('home')); //after adding, it redirects to home
             }
         }
@@ -73,6 +75,7 @@ class StartController extends Controller
         $formMessage = $this->createForm(MessageType::class, $addMessage); //form adding message
 
         $formMessage->handleRequest($request);
+
         if($request->isMethod('POST')){
             if($formMessage->isSubmitted() && $formMessage->isValid()){
                 $entityManager = $this->getDoctrine()->getManager();
@@ -81,6 +84,7 @@ class StartController extends Controller
                 $entityManager->flush();
 
                 $formMessage->getData();
+
                 return $this->redirect($this->generateUrl('home'));
             }
         }
@@ -89,8 +93,8 @@ class StartController extends Controller
         return array(
             'resultFormFile' => $resultFormFile,
             'resultFormMessage' => $resultFormMessage,
-            'formFile' => isset($formFile) ? $formFile->createView() : NULL,
-            'formMessage' => isset($formMessage) ? $formMessage->createView() : NULL
+            'formFile' => isset($formFile) ? $formFile->createView() : null,
+            'formMessage' => isset($formMessage) ? $formMessage->createView() : null
         );
     }
 
@@ -108,11 +112,12 @@ class StartController extends Controller
         $formFile = $this->createForm(DocType::class, $addFile);
 
         $formFile->handleRequest($request);
+
         if($request->isMethod('POST')){
             if($formFile->isSubmitted() && $formFile->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
 
-                if($addFile->getName() == NULL){
+                if($addFile->getName() === null){
                     $addFile->upload();
                 }else {
                     $file = $addFile->getFile();
@@ -131,6 +136,7 @@ class StartController extends Controller
                 $entityManager->flush();
 
                 $formFile->getData();
+
                 return $this->redirect($this->generateUrl('homeUser'));
             }
         }
@@ -143,6 +149,7 @@ class StartController extends Controller
         $formMessage = $this->createForm(MessageType::class, $addMessage);
 
         $formMessage->handleRequest($request);
+
         if($request->isMethod('POST')){
             if($formMessage->isSubmitted() && $formMessage->isValid()){
                 $entityManager = $this->getDoctrine()->getManager();
@@ -151,6 +158,7 @@ class StartController extends Controller
                 $entityManager->flush();
 
                 $formMessage->getData();
+
                 return $this->redirect($this->generateUrl('homeUser'));
             }
         }
@@ -159,8 +167,8 @@ class StartController extends Controller
         return array(
             'resultFormFile' => $resultFormFile,
             'resultFormMessage' => $resultFormMessage,
-            'formFile' => isset($formFile) ? $formFile->createView() : NULL,
-            'formMessage' => isset($formMessage) ? $formMessage->createView() : NULL
+            'formFile' => isset($formFile) ? $formFile->createView() : null,
+            'formMessage' => isset($formMessage) ? $formMessage->createView() : null
         );
     }
 }

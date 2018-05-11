@@ -19,7 +19,7 @@ class MessageController extends Controller
     public function deleteMessageAction($id){
         $message = $this->getDoctrine()->getRepository(Message::class)->find($id); //i'm looking for a message id
 
-        if (NULL == $message) {
+        if ($message === null) {
             throw $this->createNotFoundException('Not Found entry in this database');
         }
 
@@ -38,13 +38,14 @@ class MessageController extends Controller
     public function updateMessageAction(Request $request, $id){
         $updateMessage = $this->getDoctrine()->getRepository(Message::class)->find($id); //i'm looking for a message id
 
-        if(NULL == $updateMessage){
+        if($updateMessage === null){
             throw $this->createNotFoundException('Not Found entry in this database');
         }
 
         $formUpdateMessage = $this->createForm(UpdateMessageType::class, $updateMessage); //edit form
 
         $formUpdateMessage->handleRequest($request);
+
         if($request->isMethod('POST')){
             if($formUpdateMessage->isValid()){
                 $entityManager = $this->getDoctrine()->getManager();
@@ -52,13 +53,14 @@ class MessageController extends Controller
                 $entityManager->flush();
 
                 $formUpdateMessage->getData();
+
                 return $this->redirect($this->generateUrl('home'));
             }
         }
 
         return array(
             'updateMessage' => $updateMessage,
-            'formUpdateMessage' => isset($formUpdateMessage) ? $formUpdateMessage->createView() : NULL
+            'formUpdateMessage' => isset($formUpdateMessage) ? $formUpdateMessage->createView() : null
         );
     }
 }
