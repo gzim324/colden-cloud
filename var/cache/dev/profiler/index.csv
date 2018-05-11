@@ -70,3 +70,7 @@ ccaf7c,::1,GET,http://localhost/coldencloud/public/new-user,1526041553,28a176,20
 28a176,::1,POST,http://localhost/coldencloud/public/new-user,1526041553,,500
 db68b1,::1,POST,http://localhost/coldencloud/public/new-user,1526042266,,302
 57b765,::1,GET,http://localhost/coldencloud/public/users,1526042267,,200
+6d20e4,::1,GET,http://localhost/coldencloud/public/,1526042415,,200
+825a1a,::1,GET,http://localhost/coldencloud/public/update-message/10,1526042418,,200
+4a69ee,::1,POST,http://localhost/coldencloud/public/update-message/10,1526042421,,302
+94e29f,::1,GET,http://localhost/coldencloud/public/,1526042421,,200
