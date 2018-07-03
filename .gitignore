@@ -1,2 +1,3 @@
 /var/*
-/public/uploads/*
+/public/uploads
+.idea/
