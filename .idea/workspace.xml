@@ -1,7 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6686f65-b7d7-47d5-8821-98abfaea2ebf" name="Default" comment="" />
+    <list default="true" id="d6686f65-b7d7-47d5-8821-98abfaea2ebf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.web-server-pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2469.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/Screen Shot 2018-03-08 at 11.30.52 AM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/Untitled 1.spf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/[EX-TORRENTY.ORG] W pulapce wojny _ The Hurt Locker (2008) [DVDRip] [XviD-GR4PE] [Lektor PL].torrent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/plan-niestacjonarny-25.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FileRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MessageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/-/F/uKtsKPf06kdkpBBZhoYI" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/-/F/uKtsKPf06kdkpBBZhoYI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/-/K/jaE5OevZA-bmY2ceQGaz" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/-/K/jaE5OevZA-bmY2ceQGaz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/0/Z/+0kzoRWFx8NA0YNFpBnZ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/0/Z/+0kzoRWFx8NA0YNFpBnZ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/2/9/68zs65ipCOe6ipaCCt74" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/2/9/68zs65ipCOe6ipaCCt74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/2/F/Mm8Z0xAb9BfxGTssY8tT" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/2/F/Mm8Z0xAb9BfxGTssY8tT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/7/H/+DXht1Dv00tMiYoQ+oD3" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/7/H/+DXht1Dv00tMiYoQ+oD3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/9/C/UxjeZfGHio-+YAJq9fLx" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/9/C/UxjeZfGHio-+YAJq9fLx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/9/M/8sh2P6uDRSOnNQU1rBbP" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/9/M/8sh2P6uDRSOnNQU1rBbP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/A/C/63ps+zr4ozG6Tfy2e138" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/A/C/63ps+zr4ozG6Tfy2e138" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/A/K/kXGiq5oBIwRv3+uBKIpB" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/A/K/kXGiq5oBIwRv3+uBKIpB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/3/50SQDnTj+jol4O0rM22C" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/3/50SQDnTj+jol4O0rM22C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/A/mBDYRPZFo9DlEj33F0wr" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/A/mBDYRPZFo9DlEj33F0wr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/E/Z8SZIENxAyLZNN6vwGJ-" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/E/Z8SZIENxAyLZNN6vwGJ-" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/H/3ZABdbCuvKJ3Iovy+IZ9" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/H/3ZABdbCuvKJ3Iovy+IZ9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/X/mpGtjR9W37DzSw-Pt6Qo" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/B/X/mpGtjR9W37DzSw-Pt6Qo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/2/O8hjPaPHry9eomvkAmN2" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/2/O8hjPaPHry9eomvkAmN2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/E/XgXbi4xS6SdzzyXmKolh" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/E/XgXbi4xS6SdzzyXmKolh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/R/nYRUapvr+Py+yPX+pzJi" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/R/nYRUapvr+Py+yPX+pzJi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/Y/EQP9G4Nl+ptQxxiO1MXz" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/C/Y/EQP9G4Nl+ptQxxiO1MXz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/D/S/w3cNXQJnlXyMifKBCQR6" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/D/S/w3cNXQJnlXyMifKBCQR6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/F/A/T-yZHqRiSyy78bYlvDS1" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/F/A/T-yZHqRiSyy78bYlvDS1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/G/D/9dAM3jJGTVJ4qz+ZgxX2" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/G/D/9dAM3jJGTVJ4qz+ZgxX2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/G/F/jXD8WtLAYATFXO7erheD" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/G/F/jXD8WtLAYATFXO7erheD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/M/9yC73lGxYVV9cqzJjLol" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/M/9yC73lGxYVV9cqzJjLol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/S/Za-kIOx63vFGezwdiajQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/S/Za-kIOx63vFGezwdiajQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/T/N-EsLtasApSyOwb7SIrM" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/H/T/N-EsLtasApSyOwb7SIrM" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/B/FvqDkQS+lkfQTl+VavWD" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/B/FvqDkQS+lkfQTl+VavWD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/D/10+8r8RZrJs6LnGU3YpI" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/D/10+8r8RZrJs6LnGU3YpI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/E/LwyL7enaqzSKwLgQKGxL" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/E/LwyL7enaqzSKwLgQKGxL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/R/+86K3FcLapjn60jpl0md" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/I/R/+86K3FcLapjn60jpl0md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/C/E0e5wXTf2yEXmQWMB7hH" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/C/E0e5wXTf2yEXmQWMB7hH" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/W/ElJvkjcK-tL4TPPMX12k" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/W/ElJvkjcK-tL4TPPMX12k" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/W/cKlyqHKc+F4vxdlGurLe" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/J/W/cKlyqHKc+F4vxdlGurLe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/L/W/yd191HURQHslb0TPtQCn" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/L/W/yd191HURQHslb0TPtQCn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/M/H/VRDf+8T0+bLwbh7990Kt" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/M/H/VRDf+8T0+bLwbh7990Kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/M/R/dQrqwRwKLVK6srszd4ki" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/M/R/dQrqwRwKLVK6srszd4ki" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/N/I/PIozN+7wvRpqyNt9SjLH" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/N/I/PIozN+7wvRpqyNt9SjLH" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/6/g9cLiOQPNNxUE0hOGETX" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/6/g9cLiOQPNNxUE0hOGETX" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/J/zzydK0gEinnSq6+IRXvN" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/J/zzydK0gEinnSq6+IRXvN" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/K/9o5PiSg5tcDQ6RPi1Ku8" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/O/K/9o5PiSg5tcDQ6RPi1Ku8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/F/R8GBbTIa5DjiDXY9F2Je" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/F/R8GBbTIa5DjiDXY9F2Je" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/J/-26sNCVu03ngFIwiScNP" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/J/-26sNCVu03ngFIwiScNP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/O/oJsh36LZ6278t2rBqtd2" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/P/O/oJsh36LZ6278t2rBqtd2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/-/4zWrgWkc8EcAZOILbjM5" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/-/4zWrgWkc8EcAZOILbjM5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/5/9+SM7CeR61DEI80dotPq" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/5/9+SM7CeR61DEI80dotPq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/7/S2QNAakeS2nlApjSTJNs" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/7/S2QNAakeS2nlApjSTJNs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/N/kNO4zV0jtogd6FJ-4jtY" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Q/N/kNO4zV0jtogd6FJ-4jtY" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/R/O/1+1hPMXv9X29r4oT4Tmo" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/R/O/1+1hPMXv9X29r4oT4Tmo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/R/U/urD75GyeVXyQO-oqwxsW" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/R/U/urD75GyeVXyQO-oqwxsW" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/1/cxy7AykwkbId5dEJWs4l" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/1/cxy7AykwkbId5dEJWs4l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/8/Ox70ERlGXtv0NnEFNgTz" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/8/Ox70ERlGXtv0NnEFNgTz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/P/bwGmAIo0XDNwrTbk3n1v" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/S/P/bwGmAIo0XDNwrTbk3n1v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/T/L/0SrhIPiNK2CUNsipX4N-" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/T/L/0SrhIPiNK2CUNsipX4N-" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/T/V/Mx9dE3PmJCARcoBtAgME" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/T/V/Mx9dE3PmJCARcoBtAgME" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/U/K/KZrH-NBeyMDT5ZcgZ7se" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/U/K/KZrH-NBeyMDT5ZcgZ7se" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/U/U/Di+c2pbf7mRTTWLGfYvZ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/U/U/Di+c2pbf7mRTTWLGfYvZ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/V/9/XohqrujE-3yxGG3p7x+Y" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/V/9/XohqrujE-3yxGG3p7x+Y" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/V/A/D9HeJJJFYmMmJ9PuYVHZ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/V/A/D9HeJJJFYmMmJ9PuYVHZ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/W/B/5+SXzEFuyOEke8amp4DE" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/W/B/5+SXzEFuyOEke8amp4DE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/W/Z/vlotDXMr5uGmrdjTuWqx" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/W/Z/vlotDXMr5uGmrdjTuWqx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/X/T/UN68VubimBGJLqs4pd6B" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/X/T/UN68VubimBGJLqs4pd6B" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Y/N/Mk96nUy482X9fHf+aHEi" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Y/N/Mk96nUy482X9fHf+aHEi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Y/P/S56CWiBvn1am0pa7ltd0" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Y/P/S56CWiBvn1am0pa7ltd0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/A/5pmbDBx38uq8uRT6juzc" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/A/5pmbDBx38uq8uRT6juzc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/D/TxG6Xs01KiN7xWiNZlrI" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/D/TxG6Xs01KiN7xWiNZlrI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/J/QWd8fDiqcn2gO94lu0Ix" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/In-LpL-RJs/Z/J/QWd8fDiqcn2gO94lu0Ix" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/2c/14/51142c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/6d/97/1c976d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/72/1e/621e72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/db/dbc2fa14bcd0baa10f5228ea929b7727ef111981e634371e8050b62aff73505e.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/db/dbc2fa14bcd0baa10f5228ea929b7727ef111981e634371e8050b62aff73505e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,56 +105,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/StartController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
-              <folding>
-                <element signature="e#35#55#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/FileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="20" />
-              <folding>
-                <element signature="e#35#55#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="404">
+              <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#31#73#0#PHP" expanded="true" />
+                <element signature="e#35#55#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Message.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -110,22 +195,22 @@
         <option value="$PROJECT_DIR$/templates/user/updateUser.html.twig" />
         <option value="$PROJECT_DIR$/templates/user/newUser.html.twig" />
         <option value="$PROJECT_DIR$/templates/user/settings.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Message.php" />
-        <option value="$PROJECT_DIR$/src/Repository/MessageRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/FileRepository.php" />
         <option value="$PROJECT_DIR$/templates/start/home.html.twig" />
         <option value="$PROJECT_DIR$/templates/start/homeUser.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/File.php" />
         <option value="$PROJECT_DIR$/src/Form/UpdateMessageType.php" />
         <option value="$PROJECT_DIR$/src/Form/MessageType.php" />
         <option value="$PROJECT_DIR$/src/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/StartController.php" />
         <option value="$PROJECT_DIR$/src/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/src/Controller/FileController.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Message.php" />
+        <option value="$PROJECT_DIR$/src/Repository/FileRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/MessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/StartController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/File.php" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
       </list>
     </option>
   </component>
@@ -246,13 +331,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
@@ -283,10 +378,28 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="file" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="coldencloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coldencloud" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,11 +450,15 @@
       <workItem from="1523365527140" duration="4045000" />
       <workItem from="1523383376990" duration="607000" />
       <workItem from="1526040709350" duration="1689000" />
+      <workItem from="1529002864860" duration="1071000" />
+      <workItem from="1529677242605" duration="11000" />
+      <workItem from="1530625558606" duration="182000" />
+      <workItem from="1530626499337" duration="2671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41644000" />
+    <option name="totallyTimeSpent" value="45579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -354,7 +471,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,6 +493,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#31#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/StartController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -472,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/ChangePassword/change_password_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -547,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/newUser.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -575,23 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/File.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#30#84#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -610,13 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -657,33 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/FileRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#35#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/MessageRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#35#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -701,27 +763,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#31#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/fos_user.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/File.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/FileRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MessageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="e#35#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="651">
+          <caret line="68" column="10" lean-forward="true" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
           <folding>
             <element signature="e#35#55#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/StartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
+        <state relative-caret-position="399">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding>
+            <element signature="e#35#55#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/StartController.php">
+    <entry file="file://$PROJECT_DIR$/templates/user/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="765">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#35#55#0#PHP" expanded="true" />
           </folding>
@@ -730,18 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#31#73#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="404">
+          <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
         </state>
       </provider>
     </entry>

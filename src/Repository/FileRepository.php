@@ -24,9 +24,18 @@ class FileRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('f')
             ->where('f.visibility = :status')
             ->setParameter('status', true)
+            ->orderBy('f.id', "DESC")
             ->getQuery()
             ->getResult()
             ;
     }
 
+    public function allFile()
+    {
+        return $this->createQueryBuilder('f')
+            ->orderBy('f.id', "DESC")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

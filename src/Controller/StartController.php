@@ -66,7 +66,7 @@ class StartController extends Controller
                 return $this->redirect($this->generateUrl('home')); //after adding, it redirects to home
             }
         }
-        $resultFormFile = $this->getDoctrine()->getRepository(File::class)->findAll(); //select all file
+        $resultFormFile = $this->getDoctrine()->getRepository(File::class)->allFile(); //select all file
 
         ////////////////
 
@@ -88,7 +88,7 @@ class StartController extends Controller
                 return $this->redirect($this->generateUrl('home'));
             }
         }
-        $resultFormMessage = $this->getDoctrine()->getRepository(Message::class)->findAll(); //select all message
+        $resultFormMessage = $this->getDoctrine()->getRepository(Message::class)->allMessage(); //select all message
 
         return array(
             'resultFormFile' => $resultFormFile,

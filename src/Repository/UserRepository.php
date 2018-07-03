@@ -19,5 +19,13 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-
+    public function selectUsers()
+    {
+        return $this->createQueryBuilder('user')
+            ->where('user.roles = :roles')
+            ->setParameter('roles', 'a:0:{}')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

@@ -24,9 +24,18 @@ class MessageRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('m')
             ->where('m.visibility = :status')
             ->setParameter('status', true)
+            ->orderBy('m.id', "DESC")
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
 
+    public function allMessage()
+    {
+        return $this->createQueryBuilder('m')
+            ->orderBy('m.id', "DESC")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

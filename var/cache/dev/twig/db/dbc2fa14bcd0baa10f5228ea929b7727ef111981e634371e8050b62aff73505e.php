@@ -43,36 +43,40 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>
     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("icon.png"), "html", null, true);
+        echo "\" />
 </head>
 <body>
 <div class=\"container\">
     ";
-        // line 18
+        // line 19
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 19
+            // line 20
             echo "        <center><h1>ColdenCloud <span style=\"color: #2f63b7;\">/></span> <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
             echo "\" class=\"btn btn-link\">logout</a></h1></center>
     ";
         }
-        // line 21
+        // line 22
         echo "    <div class=\"col-lg-12 col-md-12 col-xs-12\">
         ";
-        // line 22
-        $this->displayBlock('body', $context, $blocks);
         // line 23
+        $this->displayBlock('body', $context, $blocks);
+        // line 24
         echo "    </div>
     <div class=\"col-lg-6 col-md-6 col-xs-12\">
         ";
-        // line 25
-        $this->displayBlock('file', $context, $blocks);
         // line 26
+        $this->displayBlock('file', $context, $blocks);
+        // line 27
         echo "    </div>
     <div class=\"col-lg-6 col-md-6 col-xs-12\">
         ";
-        // line 28
-        $this->displayBlock('message', $context, $blocks);
         // line 29
+        $this->displayBlock('message', $context, $blocks);
+        // line 30
         echo "    </div>
 </div>
 
@@ -91,7 +95,7 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -108,7 +112,7 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     }
 
-    // line 25
+    // line 26
     public function block_file($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -125,7 +129,7 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     }
 
-    // line 28
+    // line 29
     public function block_message($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -155,7 +159,7 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     public function getDebugInfo()
     {
-        return array (  129 => 28,  112 => 25,  95 => 22,  76 => 29,  74 => 28,  70 => 26,  68 => 25,  64 => 23,  62 => 22,  59 => 21,  53 => 19,  51 => 18,  32 => 1,);
+        return array (  133 => 29,  116 => 26,  99 => 23,  80 => 30,  78 => 29,  74 => 27,  72 => 26,  68 => 24,  66 => 23,  63 => 22,  57 => 20,  55 => 19,  48 => 15,  32 => 1,);
     }
 
     public function getSourceContext()
@@ -174,6 +178,7 @@ class __TwigTemplate_c673b7e4977d876b880cd9f7e804e46aca280ce86b5007aab64c7261466
 
     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>
     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('icon.png') }}\" />
 </head>
 <body>
 <div class=\"container\">
