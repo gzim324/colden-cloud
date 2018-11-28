@@ -50,7 +50,7 @@ The default configuration is as follow:
     .. code-block:: yaml
 
         sensio_framework_extra:
-            router:      { annotations: true }
+            router:      { annotations: true } # Deprecated; use routing annotations of Symfony core instead
             request:     { converters: true, auto_convert: true }
             view:        { annotations: true }
             cache:       { annotations: true }
@@ -147,7 +147,7 @@ This example shows all the available annotations in action::
          * @Route("/{id}")
          * @Method("GET")
          * @ParamConverter("post", class="SensioBlogBundle:Post")
-         * @Template("SensioBlogBundle:Annot:show.html.twig", vars={"post"})
+         * @Template("@SensioBlog/annot/show.html.twig", vars={"post"})
          * @Cache(smaxage="15", lastmodified="post.getUpdatedAt()", etag="'Post' ~ post.getId() ~ post.getUpdatedAt()")
          * @IsGranted("ROLE_SPECIAL_USER")
          * @Security("has_role('ROLE_ADMIN') and is_granted('POST_SHOW', post)")
@@ -181,8 +181,6 @@ example:
     annot:
         resource: "@AnnotRoutingBundle/Controller"
         type:     annotation
-
-see :ref:`Annotated Routes Activation<frameworkextra-annotations-routing-activation>` for more details.
 
 PSR-7 support
 -------------

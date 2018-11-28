@@ -12,13 +12,13 @@
 namespace Symfony\Component\Serializer\Tests\Encoder;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Tests\Fixtures\Dummy;
 use Symfony\Component\Serializer\Tests\Fixtures\NormalizableTraversableDummy;
 use Symfony\Component\Serializer\Tests\Fixtures\ScalarDummy;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
-use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class XmlEncoderTest extends TestCase
 {
@@ -189,8 +189,8 @@ XML;
     public function testEncodeScalarRootAttributes()
     {
         $array = array(
-          '#' => 'Paul',
-          '@gender' => 'm',
+            '#' => 'Paul',
+            '@gender' => 'm',
         );
 
         $expected = '<?xml version="1.0"?>'."\n".
@@ -202,8 +202,8 @@ XML;
     public function testEncodeRootAttributes()
     {
         $array = array(
-          'firstname' => 'Paul',
-          '@gender' => 'm',
+            'firstname' => 'Paul',
+            '@gender' => 'm',
         );
 
         $expected = '<?xml version="1.0"?>'."\n".
@@ -215,7 +215,7 @@ XML;
     public function testEncodeCdataWrapping()
     {
         $array = array(
-          'firstname' => 'Paul <or Me>',
+            'firstname' => 'Paul <or Me>',
         );
 
         $expected = '<?xml version="1.0"?>'."\n".
@@ -513,6 +513,89 @@ XML;
         ));
 
         $this->assertEquals($expected, $this->encoder->decode($source, 'xml'));
+    }
+
+    public function testDecodeIgnoreComments()
+    {
+        $source = <<<'XML'
+<?xml version="1.0"?>
+<!-- This comment should not become the root node. -->
+<people>
+    <person>
+        <!-- Even if the first comment didn't become the root node, we don't
+             want this comment either. -->
+        <firstname>Benjamin</firstname>
+        <lastname>Alexandre</lastname>
+    </person>
+    <person>
+        <firstname>Damien</firstname>
+        <lastname>Clay</lastname>
+    </person>
+</people>
+XML;
+
+        $expected = array('person' => array(
+          array('firstname' => 'Benjamin', 'lastname' => 'Alexandre'),
+          array('firstname' => 'Damien', 'lastname' => 'Clay'),
+        ));
+
+        $this->assertEquals($expected, $this->encoder->decode($source, 'xml'));
+    }
+
+    public function testDecodePreserveComments()
+    {
+        $source = <<<'XML'
+<?xml version="1.0"?>
+<people>
+    <person>
+        <!-- This comment should be decoded. -->
+        <firstname>Benjamin</firstname>
+        <lastname>Alexandre</lastname>
+    </person>
+    <person>
+        <firstname>Damien</firstname>
+        <lastname>Clay</lastname>
+    </person>
+</people>
+XML;
+
+        $this->encoder = new XmlEncoder('people', null, array(XML_PI_NODE));
+        $serializer = new Serializer(array(new CustomNormalizer()), array('xml' => new XmlEncoder()));
+        $this->encoder->setSerializer($serializer);
+
+        $expected = array('person' => array(
+          array('firstname' => 'Benjamin', 'lastname' => 'Alexandre', '#comment' => ' This comment should be decoded. '),
+          array('firstname' => 'Damien', 'lastname' => 'Clay'),
+        ));
+
+        $this->assertEquals($expected, $this->encoder->decode($source, 'xml'));
+    }
+
+    public function testDecodeAlwaysAsCollection()
+    {
+        $this->encoder = new XmlEncoder('response', null);
+        $serializer = new Serializer(array(new CustomNormalizer()), array('xml' => new XmlEncoder()));
+        $this->encoder->setSerializer($serializer);
+
+        $source = <<<'XML'
+<?xml version="1.0"?>
+<order_rows nodeType="order_row" virtualEntity="true">
+    <order_row>
+        <id><![CDATA[16]]></id>
+        <test><![CDATA[16]]></test>
+    </order_row>
+</order_rows>
+XML;
+        $expected = array(
+            '@nodeType' => 'order_row',
+            '@virtualEntity' => 'true',
+            'order_row' => array(array(
+                'id' => array(16),
+                'test' => array(16),
+            )),
+        );
+
+        $this->assertEquals($expected, $this->encoder->decode($source, 'xml', array('as_collection' => true)));
     }
 
     public function testDecodeWithoutItemHash()

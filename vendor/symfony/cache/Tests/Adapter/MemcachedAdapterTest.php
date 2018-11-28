@@ -89,6 +89,7 @@ class MemcachedAdapterTest extends AdapterTestCase
 
         $this->assertTrue($client->getOption(\Memcached::OPT_COMPRESSION));
         $this->assertSame(1, $client->getOption(\Memcached::OPT_BINARY_PROTOCOL));
+        $this->assertSame(1, $client->getOption(\Memcached::OPT_TCP_NODELAY));
         $this->assertSame(1, $client->getOption(\Memcached::OPT_LIBKETAMA_COMPATIBLE));
     }
 
@@ -136,7 +137,7 @@ class MemcachedAdapterTest extends AdapterTestCase
             'localhost',
             11222,
         );
-        if (ini_get('memcached.use_sasl')) {
+        if (filter_var(ini_get('memcached.use_sasl'), FILTER_VALIDATE_BOOLEAN)) {
             yield array(
                 'memcached://user:password@127.0.0.1?weight=50',
                 '127.0.0.1',
@@ -153,7 +154,7 @@ class MemcachedAdapterTest extends AdapterTestCase
             '/var/local/run/memcached.socket',
             0,
         );
-        if (ini_get('memcached.use_sasl')) {
+        if (filter_var(ini_get('memcached.use_sasl'), FILTER_VALIDATE_BOOLEAN)) {
             yield array(
                 'memcached://user:password@/var/local/run/memcached.socket?weight=25',
                 '/var/local/run/memcached.socket',

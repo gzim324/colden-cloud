@@ -23,6 +23,7 @@ class TestKernel extends Kernel
     {
         return [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \Symfony\Bundle\MonologBundle\MonologBundle(),
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
@@ -36,7 +37,7 @@ class TestKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config.yml');
 
-        if (PHP_VERSION_ID >= 70100) {
+        if (\PHP_VERSION_ID >= 70100) {
             $loader->load(__DIR__.'/config/nullable_type/config.yml');
         }
     }

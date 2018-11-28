@@ -17,11 +17,11 @@ use Symfony\Bundle\TwigBundle\Tests\TestCase;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use Symfony\Component\DependencyInjection\Reference;
 
 class TwigExtensionTest extends TestCase
 {
@@ -29,7 +29,9 @@ class TwigExtensionTest extends TestCase
     {
         $container = $this->createContainer();
         $container->registerExtension(new TwigExtension());
-        $container->loadFromExtension('twig', array());
+        $container->loadFromExtension('twig', array(
+            'strict_variables' => false, // to be removed in 5.0 relying on default
+        ));
         $this->compileContainer($container);
 
         $this->assertEquals('Twig\Environment', $container->getDefinition('twig')->getClass(), '->load() loads the twig.xml file');
@@ -72,7 +74,7 @@ class TwigExtensionTest extends TestCase
         $this->assertEquals(3.14, $calls[4][1][1], '->load() registers variables as Twig globals');
 
         // Yaml and Php specific configs
-        if (in_array($format, array('yml', 'php'))) {
+        if (\in_array($format, array('yml', 'php'))) {
             $this->assertEquals('bad', $calls[5][1][0], '->load() registers variables as Twig globals');
             $this->assertEquals(array('key' => 'foo'), $calls[5][1][1], '->load() registers variables as Twig globals');
         }
@@ -151,11 +153,14 @@ class TwigExtensionTest extends TestCase
 
         $container = $this->createContainer();
         $container->registerExtension(new TwigExtension());
-        $container->loadFromExtension('twig', array('globals' => $globals));
+        $container->loadFromExtension('twig', array(
+            'globals' => $globals,
+            'strict_variables' => false, // // to be removed in 5.0 relying on default
+        ));
         $this->compileContainer($container);
 
         $calls = $container->getDefinition('twig')->getMethodCalls();
-        foreach (array_slice($calls, 2) as $call) {
+        foreach (\array_slice($calls, 2) as $call) {
             $this->assertEquals(key($globals), $call[1][0]);
             $this->assertSame(current($globals), $call[1][1]);
 
@@ -217,7 +222,9 @@ class TwigExtensionTest extends TestCase
             $container->register('debug.stopwatch', 'Symfony\Component\Stopwatch\Stopwatch');
         }
         $container->registerExtension(new TwigExtension());
-        $container->loadFromExtension('twig', array());
+        $container->loadFromExtension('twig', array(
+            'strict_variables' => false, // to be removed in 5.0 relying on default
+        ));
         $container->setAlias('test.twig.extension.debug.stopwatch', 'twig.extension.debug.stopwatch')->setPublic(true);
         $this->compileContainer($container);
 
@@ -242,7 +249,9 @@ class TwigExtensionTest extends TestCase
     {
         $container = $this->createContainer();
         $container->registerExtension(new TwigExtension());
-        $container->loadFromExtension('twig', array());
+        $container->loadFromExtension('twig', array(
+            'strict_variables' => false, // to be removed in 5.0 relying on default
+        ));
         $container->setParameter('kernel.environment', 'test');
         $container->setParameter('debug.file_link_format', 'test');
         $container->setParameter('foo', 'FooClass');

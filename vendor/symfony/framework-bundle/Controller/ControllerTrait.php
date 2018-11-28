@@ -13,20 +13,20 @@ namespace Symfony\Bundle\FrameworkBundle\Controller;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Psr\Container\ContainerInterface;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Csrf\CsrfToken;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Common features needed in controllers.
@@ -76,14 +76,13 @@ trait ControllerTrait
     /**
      * Forwards the request to another controller.
      *
-     * @param string $controller The controller name (a string like BlogBundle:Post:index)
+     * @param string $controller The controller name (a string like Bundle\BlogBundle\Controller\PostController::indexAction)
      *
      * @final
      */
     protected function forward(string $controller, array $path = array(), array $query = array()): Response
     {
         $request = $this->container->get('request_stack')->getCurrentRequest();
-        $path['_forwarded'] = $request->attributes;
         $path['_controller'] = $controller;
         $subRequest = $request->duplicate($query, null, $path);
 
@@ -359,7 +358,7 @@ trait ControllerTrait
             return;
         }
 
-        if (!is_object($user = $token->getUser())) {
+        if (!\is_object($user = $token->getUser())) {
             // e.g. anonymous authentication
             return;
         }
@@ -382,5 +381,21 @@ trait ControllerTrait
         }
 
         return $this->container->get('security.csrf.token_manager')->isTokenValid(new CsrfToken($id, $token));
+    }
+
+    /**
+     * Dispatches a message to the bus.
+     *
+     * @param object $message The message to dispatch
+     *
+     * @final
+     */
+    protected function dispatchMessage($message)
+    {
+        if (!$this->container->has('message_bus')) {
+            throw new \LogicException('The message bus is not enabled in your application. Try running "composer require symfony/messenger".');
+        }
+
+        return $this->container->get('message_bus')->dispatch($message);
     }
 }

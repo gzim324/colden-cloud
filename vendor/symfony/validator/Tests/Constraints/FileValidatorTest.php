@@ -31,7 +31,7 @@ abstract class FileValidatorTest extends ConstraintValidatorTestCase
     {
         parent::setUp();
 
-        $this->path = sys_get_temp_dir().DIRECTORY_SEPARATOR.'FileValidatorTest';
+        $this->path = sys_get_temp_dir().\DIRECTORY_SEPARATOR.'FileValidatorTest';
         $this->file = fopen($this->path, 'w');
         fwrite($this->file, ' ', 1);
     }
@@ -40,7 +40,7 @@ abstract class FileValidatorTest extends ConstraintValidatorTestCase
     {
         parent::tearDown();
 
-        if (is_resource($this->file)) {
+        if (\is_resource($this->file)) {
             fclose($this->file);
         }
 
@@ -83,7 +83,8 @@ abstract class FileValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidUploadedfile()
     {
-        $file = new UploadedFile($this->path, 'originalName', null, null, null, true);
+        file_put_contents($this->path, '1');
+        $file = new UploadedFile($this->path, 'originalName', null, null, true);
         $this->validator->validate($file, new File());
 
         $this->assertNoViolation();
@@ -411,7 +412,7 @@ abstract class FileValidatorTest extends ConstraintValidatorTestCase
      */
     public function testUploadedFileError($error, $message, array $params = array(), $maxSize = null)
     {
-        $file = new UploadedFile('/path/to/file', 'originalName', 'mime', 0, $error);
+        $file = new UploadedFile(tempnam(sys_get_temp_dir(), 'file-validator-test-'), 'originalName', 'mime', $error);
 
         $constraint = new File(array(
             $message => 'myMessage',
@@ -450,11 +451,17 @@ abstract class FileValidatorTest extends ConstraintValidatorTestCase
                 '{{ suffix }}' => 'bytes',
             ), '1');
 
+            // access FileValidator::factorizeSizes() private method to format max file size
+            $reflection = new \ReflectionClass(\get_class(new FileValidator()));
+            $method = $reflection->getMethod('factorizeSizes');
+            $method->setAccessible(true);
+            list($sizeAsString, $limit, $suffix) = $method->invokeArgs(new FileValidator(), array(0, UploadedFile::getMaxFilesize(), false));
+
             // it correctly parses the maxSize option and not only uses simple string comparison
             // 1000M should be bigger than the ini value
             $tests[] = array(UPLOAD_ERR_INI_SIZE, 'uploadIniSizeErrorMessage', array(
-                '{{ limit }}' => UploadedFile::getMaxFilesize() / 1048576,
-                '{{ suffix }}' => 'MiB',
+                '{{ limit }}' => $limit,
+                '{{ suffix }}' => $suffix,
             ), '1000M');
 
             // it correctly parses the maxSize option and not only uses simple string comparison

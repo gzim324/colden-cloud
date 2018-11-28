@@ -16,6 +16,8 @@ final class DependencyBuilder
     private $dependencies = [];
     private $devDependencies = [];
 
+    private $minimumPHPVersion = 70000;
+
     /**
      * Add a dependency that will be reported if the given class is missing.
      *
@@ -38,6 +40,11 @@ final class DependencyBuilder
                 'required' => $required,
             ];
         }
+    }
+
+    public function requirePHP71()
+    {
+        $this->minimumPHPVersion = 70100;
     }
 
     /**
@@ -75,7 +82,7 @@ final class DependencyBuilder
     /**
      * @internal
      */
-    public function getMissingPackagesMessage(string $commandName): string
+    public function getMissingPackagesMessage(string $commandName, $message = null): string
     {
         $packages = $this->getMissingDependencies();
         $packagesDev = $this->getMissingDevDependencies();
@@ -84,12 +91,12 @@ final class DependencyBuilder
             return '';
         }
 
-        $packagesCount = count($packages) + count($packagesDev);
+        $packagesCount = \count($packages) + \count($packagesDev);
 
         $message = sprintf(
-            "Missing package%s: to use the %s command, run:\n",
+            "Missing package%s: %s, run:\n",
             $packagesCount > 1 ? 's' : '',
-            $commandName
+            $message ? $message : sprintf('to use the %s command', $commandName)
         );
 
         if (!empty($packages)) {
@@ -103,7 +110,15 @@ final class DependencyBuilder
         return $message;
     }
 
-    private function getRequiredDependencyNames(array $dependencies)
+    /**
+     * @internal
+     */
+    public function isPhpVersionSatisfied(): bool
+    {
+        return \PHP_VERSION_ID >= $this->minimumPHPVersion;
+    }
+
+    private function getRequiredDependencyNames(array $dependencies): array
     {
         $packages = [];
         foreach ($dependencies as $package) {
@@ -113,15 +128,15 @@ final class DependencyBuilder
             $packages[] = $package['name'];
         }
 
-        return $packages;
+        return array_unique($packages);
     }
 
-    private function calculateMissingDependencies(array $dependencies)
+    private function calculateMissingDependencies(array $dependencies): array
     {
         $missingPackages = [];
         $missingOptionalPackages = [];
         foreach ($dependencies as $package) {
-            if (class_exists($package['class'])) {
+            if (class_exists($package['class']) || interface_exists($package['class'])) {
                 continue;
             }
             if (true === $package['required']) {
@@ -134,6 +149,6 @@ final class DependencyBuilder
             return [];
         }
 
-        return array_merge($missingPackages, $missingOptionalPackages);
+        return array_unique(array_merge($missingPackages, $missingOptionalPackages));
     }
 }

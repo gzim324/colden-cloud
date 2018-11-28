@@ -20,10 +20,13 @@ env:
     global:
         - SYMFONY_PHPUNIT_DIR=.phpunit
 
+before_install:
+    - phpenv config-rm xdebug.ini
+
 install:
-    - composer --prefer-dist install
+    - composer install
     - ./vendor/bin/simple-phpunit install
 
 script:
     - ./vendor/bin/simple-phpunit
-    - ./vendor/bin/php-cs-fixer fix --dry-run
+    - ./vendor/bin/php-cs-fixer fix --dry-run --diff

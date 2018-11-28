@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+4.1.0
+-----
+
+ * The `ContextListener::setLogoutOnUserChange()` method is deprecated.
+ * added `UserValueResolver`.
+ * Using the AdvancedUserInterface is now deprecated. To use the existing
+   functionality, create a custom user-checker based on the
+   `Symfony\Component\Security\Core\User\UserChecker`.
+ * `AuthenticationUtils::getLastUsername()` now always returns a string.
+
 4.0.0
 -----
 
@@ -13,13 +23,14 @@ CHANGELOG
  * removed HTTP digest authentication
  * removed `GuardAuthenticatorInterface` in favor of `AuthenticatorInterface`
  * removed `AbstractGuardAuthenticator::supports()`
+ * added target user to `SwitchUserListener`
 
 3.4.0
 -----
 
  * Added `getUser`, `getToken` and `isGranted` methods to `Security`.
  * added a `setToken()` method to the `SwitchUserEvent` class to allow to replace the created token while switching users
-   when custom token generation is required by application. 
+   when custom token generation is required by application.
  * Using voters that do not implement the `VoterInterface`is now deprecated in
    the `AccessDecisionManager` and this functionality will be removed in 4.0.
  * Using the `ContextListener` without setting the `logoutOnUserChange`
@@ -29,6 +40,8 @@ CHANGELOG
  * deprecated HTTP digest authentication
  * Added a new password encoder for the Argon2i hashing algorithm
  * deprecated `GuardAuthenticatorInterface` in favor of `AuthenticatorInterface`
+ * deprecated to return `null` from `getCredentials()` in classes that extend
+   `AbstractGuardAuthenticator`. Return `false` from `supports()` instead.
 
 3.3.0
 -----

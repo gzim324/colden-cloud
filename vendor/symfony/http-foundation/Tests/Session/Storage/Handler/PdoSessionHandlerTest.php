@@ -153,7 +153,7 @@ class PdoSessionHandlerTest extends TestCase
 
     public function testReadLockedConvertsStreamToString()
     {
-        if (ini_get('session.use_strict_mode')) {
+        if (filter_var(ini_get('session.use_strict_mode'), FILTER_VALIDATE_BOOLEAN)) {
             $this->markTestSkipped('Strict mode needs no locking for new sessions.');
         }
 
@@ -389,8 +389,8 @@ class MockPdo extends \PDO
 
     public function prepare($statement, $driverOptions = array())
     {
-        return is_callable($this->prepareResult)
-            ? call_user_func($this->prepareResult, $statement, $driverOptions)
+        return \is_callable($this->prepareResult)
+            ? \call_user_func($this->prepareResult, $statement, $driverOptions)
             : $this->prepareResult;
     }
 

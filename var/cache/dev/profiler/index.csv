@@ -239,3 +239,5 @@ a0896e,::1,GET,http://localhost/coldencloud/public/logout,1543430369,,302
 e0145b,::1,GET,http://localhost/coldencloud/public/login,1543430373,,200
 f08498,::1,POST,http://localhost/coldencloud/public/login_check,1543430376,,302
 f17335,::1,GET,http://localhost/coldencloud/public/login,1543430377,,200
+3919d3,::1,GET,http://localhost/coldencloud/public/,1543445642,,302
+57b15a,::1,GET,http://localhost/coldencloud/public/login,1543445642,,200

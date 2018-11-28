@@ -14,10 +14,11 @@ namespace Symfony\Bundle\MakerBundle\Maker;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Symfony\Bundle\MakerBundle\ConsoleStyle;
 use Symfony\Bundle\MakerBundle\DependencyBuilder;
-use Symfony\Bundle\MakerBundle\Doctrine\DoctrineEntityHelper;
+use Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper;
 use Symfony\Bundle\MakerBundle\Generator;
 use Symfony\Bundle\MakerBundle\InputConfiguration;
 use Symfony\Bundle\MakerBundle\Str;
+use Symfony\Bundle\MakerBundle\Util\ClassDetails;
 use Symfony\Bundle\MakerBundle\Validator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -34,7 +35,7 @@ final class MakeForm extends AbstractMaker
 {
     private $entityHelper;
 
-    public function __construct(DoctrineEntityHelper $entityHelper)
+    public function __construct(DoctrineHelper $entityHelper)
     {
         $this->entityHelper = $entityHelper;
     }
@@ -49,7 +50,7 @@ final class MakeForm extends AbstractMaker
         $command
             ->setDescription('Creates a new form class')
             ->addArgument('name', InputArgument::OPTIONAL, sprintf('The name of the form class (e.g. <fg=yellow>%sType</>)', Str::asClassName(Str::getRandomTerm())))
-            ->addArgument('bound-class', InputArgument::OPTIONAL, 'The name of Entity or custom model class that the new form will be bound to (empty for none)')
+            ->addArgument('bound-class', InputArgument::OPTIONAL, 'The name of Entity or fully qualified model class name that the new form will be bound to (empty for none)')
             ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeForm.txt'))
         ;
 
@@ -95,6 +96,9 @@ final class MakeForm extends AbstractMaker
 
             if (null !== $doctrineEntityDetails) {
                 $formFields = $doctrineEntityDetails->getFormFields();
+            } else {
+                $classDetails = new ClassDetails($boundClassDetails->getFullName());
+                $formFields = $classDetails->getFormFields();
             }
 
             $boundClassVars = [

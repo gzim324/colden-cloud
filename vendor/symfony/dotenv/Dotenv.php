@@ -67,8 +67,8 @@ final class Dotenv
      */
     public function populate(array $values): void
     {
-        $loadedVars = array_flip(explode(',', getenv('SYMFONY_DOTENV_VARS')));
-        unset($loadedVars['']);
+        $updateLoadedVars = false;
+        $loadedVars = array_flip(explode(',', $_SERVER['SYMFONY_DOTENV_VARS'] ?? $_ENV['SYMFONY_DOTENV_VARS'] ?? ''));
 
         foreach ($values as $name => $value) {
             $notHttpName = 0 !== strpos($name, 'HTTP_');
@@ -83,14 +83,15 @@ final class Dotenv
                 $_SERVER[$name] = $value;
             }
 
-            $loadedVars[$name] = true;
+            if (!isset($loadedVars[$name])) {
+                $loadedVars[$name] = $updateLoadedVars = true;
+            }
         }
 
-        if ($loadedVars) {
+        if ($updateLoadedVars) {
+            unset($loadedVars['']);
             $loadedVars = implode(',', array_keys($loadedVars));
-            putenv("SYMFONY_DOTENV_VARS=$loadedVars");
-            $_ENV['SYMFONY_DOTENV_VARS'] = $loadedVars;
-            $_SERVER['SYMFONY_DOTENV_VARS'] = $loadedVars;
+            putenv('SYMFONY_DOTENV_VARS='.$_ENV['SYMFONY_DOTENV_VARS'] = $_SERVER['SYMFONY_DOTENV_VARS'] = $loadedVars);
         }
     }
 
@@ -110,7 +111,7 @@ final class Dotenv
         $this->data = str_replace(array("\r\n", "\r"), "\n", $data);
         $this->lineno = 1;
         $this->cursor = 0;
-        $this->end = strlen($this->data);
+        $this->end = \strlen($this->data);
         $this->state = self::STATE_VARNAME;
         $this->values = array();
         $name = '';
@@ -224,15 +225,16 @@ final class Dotenv
                     throw $this->createFormatException('Missing quote to end the value');
                 }
                 ++$this->cursor;
-                $value = str_replace(array('\\\\', '\\"', '\r', '\n'), array('\\', '"', "\r", "\n"), $value);
+                $value = str_replace(array('\\"', '\r', '\n'), array('"', "\r", "\n"), $value);
                 $resolvedValue = $value;
                 $resolvedValue = $this->resolveVariables($resolvedValue);
                 $resolvedValue = $this->resolveCommands($resolvedValue);
+                $resolvedValue = str_replace('\\\\', '\\', $resolvedValue);
                 $v .= $resolvedValue;
             } else {
                 $value = '';
                 $prevChr = $this->data[$this->cursor - 1];
-                while ($this->cursor < $this->end && !in_array($this->data[$this->cursor], array("\n", '"', "'"), true) && !((' ' === $prevChr || "\t" === $prevChr) && '#' === $this->data[$this->cursor])) {
+                while ($this->cursor < $this->end && !\in_array($this->data[$this->cursor], array("\n", '"', "'"), true) && !((' ' === $prevChr || "\t" === $prevChr) && '#' === $this->data[$this->cursor])) {
                     if ('\\' === $this->data[$this->cursor] && isset($this->data[$this->cursor + 1]) && ('"' === $this->data[$this->cursor + 1] || "'" === $this->data[$this->cursor + 1])) {
                         ++$this->cursor;
                     }
@@ -250,6 +252,7 @@ final class Dotenv
                 $resolvedValue = $value;
                 $resolvedValue = $this->resolveVariables($resolvedValue);
                 $resolvedValue = $this->resolveCommands($resolvedValue);
+                $resolvedValue = str_replace('\\\\', '\\', $resolvedValue);
 
                 if ($resolvedValue === $value && preg_match('/\s+/', $value)) {
                     throw $this->createFormatException('A value containing spaces must be surrounded by quotes');
@@ -322,7 +325,7 @@ final class Dotenv
                 return substr($matches[0], 1);
             }
 
-            if ('\\' === DIRECTORY_SEPARATOR) {
+            if ('\\' === \DIRECTORY_SEPARATOR) {
                 throw new \LogicException('Resolving commands is not supported on Windows.');
             }
 
@@ -350,24 +353,31 @@ final class Dotenv
         }
 
         $regex = '/
-            (\\\\)?                    # escaped with a backslash?
+            (?<!\\\\)
+            (?P<backslashes>\\\\*)             # escaped with a backslash?
             \$
-            (?!\()                     # no opening parenthesis
-            (\{)?                      # optional brace
-            ('.self::VARNAME_REGEX.')  # var name
-            (\})?                      # optional closing brace
+            (?!\()                             # no opening parenthesis
+            (?P<opening_brace>\{)?             # optional brace
+            (?P<name>'.self::VARNAME_REGEX.')? # var name
+            (?P<closing_brace>\})?             # optional closing brace
         /x';
 
         $value = preg_replace_callback($regex, function ($matches) {
-            if ('\\' === $matches[1]) {
+            // odd number of backslashes means the $ character is escaped
+            if (1 === \strlen($matches['backslashes']) % 2) {
                 return substr($matches[0], 1);
             }
 
-            if ('{' === $matches[2] && !isset($matches[4])) {
+            // unescaped $ not followed by variable name
+            if (!isset($matches['name'])) {
+                return $matches[0];
+            }
+
+            if ('{' === $matches['opening_brace'] && !isset($matches['closing_brace'])) {
                 throw $this->createFormatException('Unclosed braces on variable expansion');
             }
 
-            $name = $matches[3];
+            $name = $matches['name'];
             if (isset($this->values[$name])) {
                 $value = $this->values[$name];
             } elseif (isset($_SERVER[$name]) && 0 !== strpos($name, 'HTTP_')) {
@@ -378,20 +388,19 @@ final class Dotenv
                 $value = (string) getenv($name);
             }
 
-            if (!$matches[2] && isset($matches[4])) {
+            if (!$matches['opening_brace'] && isset($matches['closing_brace'])) {
                 $value .= '}';
             }
 
-            return $value;
+            return $matches['backslashes'].$value;
         }, $value);
 
-        // unescape $
-        return str_replace('\\$', '$', $value);
+        return $value;
     }
 
     private function moveCursor($text)
     {
-        $this->cursor += strlen($text);
+        $this->cursor += \strlen($text);
         $this->lineno += substr_count($text, "\n");
     }
 

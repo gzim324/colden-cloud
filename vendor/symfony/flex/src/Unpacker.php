@@ -15,7 +15,6 @@ use Composer\Composer;
 use Composer\Factory;
 use Composer\Json\JsonFile;
 use Composer\Json\JsonManipulator;
-use Composer\Package\Package;
 use Symfony\Flex\Unpack\Operation;
 use Symfony\Flex\Unpack\Result;
 
@@ -41,7 +40,7 @@ class Unpacker
                 null === $pkg ||
                 'symfony-pack' !== $pkg->getType() ||
                 !$op->shouldUnpack() ||
-                0 === count($pkg->getRequires()) + count($pkg->getDevRequires())
+                0 === \count($pkg->getRequires()) + \count($pkg->getDevRequires())
             ) {
                 $result->addRequired($package['name'].($package['version'] ? ':'.$package['version'] : ''));
 

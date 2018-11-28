@@ -20,7 +20,7 @@ use Symfony\Component\Serializer\Exception\UnexpectedValueException;
  *
  * @author Jérôme Parmentier <jerome@prmntr.me>
  */
-class DateIntervalNormalizer implements NormalizerInterface, DenormalizerInterface
+class DateIntervalNormalizer implements NormalizerInterface, DenormalizerInterface, CacheableSupportsMethodInterface
 {
     const FORMAT_KEY = 'dateinterval_format';
 
@@ -57,14 +57,22 @@ class DateIntervalNormalizer implements NormalizerInterface, DenormalizerInterfa
 
     /**
      * {@inheritdoc}
+     */
+    public function hasCacheableSupportsMethod(): bool
+    {
+        return __CLASS__ === \get_class($this);
+    }
+
+    /**
+     * {@inheritdoc}
      *
      * @throws InvalidArgumentException
      * @throws UnexpectedValueException
      */
     public function denormalize($data, $class, $format = null, array $context = array())
     {
-        if (!is_string($data)) {
-            throw new InvalidArgumentException(sprintf('Data expected to be a string, %s given.', gettype($data)));
+        if (!\is_string($data)) {
+            throw new InvalidArgumentException(sprintf('Data expected to be a string, %s given.', \gettype($data)));
         }
 
         if (!$this->isISO8601($data)) {
