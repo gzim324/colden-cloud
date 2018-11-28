@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Repository;
- 
+
 use App\Entity\Message;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -21,10 +21,10 @@ class MessageRepository extends ServiceEntityRepository
 
     public function messageVisibility()
     {
-        return $this->createQueryBuilder('m')
-            ->where('m.visibility = :status')
+        return $this->createQueryBuilder('message')
+            ->where('message.visibility = :status')
             ->setParameter('status', true)
-            ->orderBy('m.id', "DESC")
+            ->orderBy('message.id', "DESC")
             ->getQuery()
             ->getResult()
             ;
@@ -32,8 +32,8 @@ class MessageRepository extends ServiceEntityRepository
 
     public function allMessage()
     {
-        return $this->createQueryBuilder('m')
-            ->orderBy('m.id', "DESC")
+        return $this->createQueryBuilder('message')
+            ->orderBy('message.id', "DESC")
             ->getQuery()
             ->getResult()
             ;

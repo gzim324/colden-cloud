@@ -37,13 +37,13 @@ class StartController extends Controller
 
         $formFile->handleRequest($request); //I'm getting what's data was in the form
 
-        if($request->isMethod('POST')){ //I'm checking if this is method post
-            if($formFile->isSubmitted() && $formFile->isValid()) { //checking if data is valid and submitted
+        if ($request->isMethod('POST')) { //I'm checking if this is method post
+            if ($formFile->isSubmitted() && $formFile->isValid()) { //checking if data is valid and submitted
                 $entityManager = $this->getDoctrine()->getManager(); //
 
-                if($addFile->getName() === null) { //if there is no name, it'll be get
+                if ($addFile->getName() === null) { //if there is no name, it'll be get
                     $addFile->upload();
-                }else {
+                } else {
                     $addFile->setName($addFile->getPath());
                     $file = $addFile->getFile(); //add file
                     $fileName = $addFile->getPath(); //get path
@@ -68,7 +68,7 @@ class StartController extends Controller
         }
         $resultFormFile = $this->getDoctrine()->getRepository(File::class)->allFile(); //select all file
 
-        ////////////////
+        //section Message
 
         $addMessage = new Message(); //instance class message
 
@@ -76,8 +76,8 @@ class StartController extends Controller
 
         $formMessage->handleRequest($request);
 
-        if($request->isMethod('POST')){
-            if($formMessage->isSubmitted() && $formMessage->isValid()){
+        if ($request->isMethod('POST')) {
+            if ($formMessage->isSubmitted() && $formMessage->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $addMessage->setVisibility(false); //set visibility message's to false
                 $entityManager->persist($addMessage);
@@ -113,13 +113,13 @@ class StartController extends Controller
 
         $formFile->handleRequest($request);
 
-        if($request->isMethod('POST')){
-            if($formFile->isSubmitted() && $formFile->isValid()) {
+        if ($request->isMethod('POST')) {
+            if ($formFile->isSubmitted() && $formFile->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
 
-                if($addFile->getName() === null){
+                if ($addFile->getName() === null) {
                     $addFile->upload();
-                }else {
+                } else {
                     $file = $addFile->getFile();
                     $fileName = $addFile->getPath();
 
@@ -142,7 +142,7 @@ class StartController extends Controller
         }
         $resultFormFile = $this->getDoctrine()->getRepository(File::class)->fileVisibility(); //select visibility file
 
-        ////////////////
+        //section Message
 
         $addMessage = new Message();
 
@@ -150,8 +150,8 @@ class StartController extends Controller
 
         $formMessage->handleRequest($request);
 
-        if($request->isMethod('POST')){
-            if($formMessage->isSubmitted() && $formMessage->isValid()){
+        if ($request->isMethod('POST')) {
+            if ($formMessage->isSubmitted() && $formMessage->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $addMessage->setVisibility(true);    //set visibility message's to true
                 $entityManager->persist($addMessage);

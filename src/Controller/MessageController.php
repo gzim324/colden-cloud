@@ -16,7 +16,8 @@ class MessageController extends Controller
      * @Route("/delete-message/{id}", name="delete_message")
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteMessageAction($id){
+    public function deleteMessageAction($id)
+    {
         $message = $this->getDoctrine()->getRepository(Message::class)->find($id); //i'm looking for a message id
 
         if ($message === null) {
@@ -25,7 +26,7 @@ class MessageController extends Controller
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($message);
-        $entityManager->flush(); 
+        $entityManager->flush();
 
         return $this->redirect($this->generateUrl('home'));
     }
@@ -35,10 +36,11 @@ class MessageController extends Controller
      * @Security("has_role('ROLE_ADMIN')")
      * @Template("message/updateMessage.html.twig")
      */
-    public function updateMessageAction(Request $request, $id){
+    public function updateMessageAction(Request $request, $id)
+    {
         $updateMessage = $this->getDoctrine()->getRepository(Message::class)->find($id); //i'm looking for a message id
 
-        if($updateMessage === null){
+        if ($updateMessage === null) {
             throw $this->createNotFoundException('Not Found entry in this database');
         }
 
@@ -46,8 +48,8 @@ class MessageController extends Controller
 
         $formUpdateMessage->handleRequest($request);
 
-        if($request->isMethod('POST')){
-            if($formUpdateMessage->isValid()){
+        if ($request->isMethod('POST')) {
+            if ($formUpdateMessage->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($updateMessage);
                 $entityManager->flush();
@@ -59,8 +61,8 @@ class MessageController extends Controller
         }
 
         return array(
-            'updateMessage' => $updateMessage,
-            'formUpdateMessage' => isset($formUpdateMessage) ? $formUpdateMessage->createView() : null
+        'updateMessage' => $updateMessage,
+        'formUpdateMessage' => isset($formUpdateMessage) ? $formUpdateMessage->createView() : null
         );
     }
 }

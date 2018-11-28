@@ -44,8 +44,8 @@ class UserController extends Controller
 
         $formUser->handleRequest($request);
 
-        if($request->isMethod('POST')) {
-            if($formUser->isValid()) {
+        if ($request->isMethod('POST')) {
+            if ($formUser->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
                 $user->setEnabled(1);
                 $entityManager->persist($user);
@@ -67,7 +67,8 @@ class UserController extends Controller
      * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteAccountAction($id) {
+    public function deleteAccountAction($id)
+    {
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
 
         $user->setEnabled(false);
@@ -84,7 +85,8 @@ class UserController extends Controller
      * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function restoreAccountAction($id) {
+    public function restoreAccountAction($id)
+    {
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
 
         $user->setEnabled(true);
@@ -102,17 +104,18 @@ class UserController extends Controller
      * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      */
-    public function updateUserAction(Request $request, $id) {
+    public function updateUserAction(Request $request, $id)
+    {
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
 
         $formUser = $this->createForm(UserType::class, $user);
 
         $formUser->handleRequest($request);
 
-        if($request->isMethod('POST')) {
-            if($formUser->isValid()) {
+        if ($request->isMethod('POST')) {
+            if ($formUser->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
-                $user->setEmail("user@user.user");
+                $user->setEmail("user@domain.com");
                 $entityManager->persist($user);
                 $entityManager->flush();
 
@@ -137,13 +140,13 @@ class UserController extends Controller
      */
     public function settingsAction(Request $request, User $user)
     {
-        if($this->getUser() != $user->getUsername()) {
+        if ($this->getUser() != $user->getUsername()) {
             throw new AccessDeniedException();
         }
 
         $formSettings = $this->createForm(SettingsType::class, $user);
 
-        if($request->isMethod('POST')) {
+        if ($request->isMethod('POST')) {
             $formSettings->handleRequest($request);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

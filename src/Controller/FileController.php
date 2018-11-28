@@ -16,7 +16,8 @@ class FileController extends Controller
      * @Route("/delete/{id}", name="delete_file")
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteFileAction($id){
+    public function deleteFileAction($id)
+    {
         $file = $this->getDoctrine()->getRepository(File::class)->find($id); //I'm looking for a file id
 
         if ($file === null) {
@@ -28,6 +29,7 @@ class FileController extends Controller
         if($file->getFile() !== null) {
             $file->removeUpload();
         }
+
         $entityManager->remove($file); //it's remove because the site is supposed work on localhost
         $entityManager->flush();
 
@@ -39,7 +41,8 @@ class FileController extends Controller
      * @Security("has_role('ROLE_ADMIN')")
      * @Template("file/updateFile.html.twig")
      */
-    public function updateFileAction(Request $request, $id){
+    public function updateFileAction(Request $request, $id)
+    {
         $updateFile = $this->getDoctrine()->getRepository(File::class)->find($id); //i'm looking for a file id
 
         if($updateFile === null) {
@@ -68,5 +71,4 @@ class FileController extends Controller
             'updateFileForm' => isset($updateFileForm) ? $updateFileForm->createView() : null
         );
     }
-
 }

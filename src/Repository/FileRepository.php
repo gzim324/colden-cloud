@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Repository;
- 
+
 use App\Entity\File;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -21,10 +21,10 @@ class FileRepository extends ServiceEntityRepository
 
     public function fileVisibility()
     {
-        return $this->createQueryBuilder('f')
-            ->where('f.visibility = :status')
+        return $this->createQueryBuilder('file')
+            ->where('file.visibility = :status')
             ->setParameter('status', true)
-            ->orderBy('f.id', "DESC")
+            ->orderBy('file.id', "DESC")
             ->getQuery()
             ->getResult()
             ;
@@ -32,8 +32,8 @@ class FileRepository extends ServiceEntityRepository
 
     public function allFile()
     {
-        return $this->createQueryBuilder('f')
-            ->orderBy('f.id', "DESC")
+        return $this->createQueryBuilder('file')
+            ->orderBy('file.id', "DESC")
             ->getQuery()
             ->getResult()
             ;
